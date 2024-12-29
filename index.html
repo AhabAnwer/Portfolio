@@ -1,0 +1,655 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ahab Anwer (Portfolio)</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/5.3.0/css/bootstrap.min.css">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.1/css/all.min.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;400;500;600&display=swap');
+*{
+margin:0;
+padding:0;
+box-sizing: border-box;
+font-family:"Poppins";
+text-decoration:none;
+scroll-behavior:smooth;
+list-style:none;
+}
+header{
+position:fixed;
+top:1rem;
+left:50%;
+transform:translateX(-50%);
+display:flex;
+align-items:center;
+justify-content:center;
+gap:5rem;
+background-color:rgba(0,0,0,0.8);
+backdrop-filter:blur(8px);
+color:white;
+padding:0.5rem 1.5rem;
+border-radius:3rem;
+z-index:1000;
+}
+.logo{
+color:white;
+font-size:1.3rem;
+font-weight:600;
+text-wrap:nowrap;
+transition:0.3s ease-in-out;
+}
+.logo:hover{
+transform:scale(1.1)
+}
+.nav-links{
+display:flex;
+gap:2rem;
+}
+li a{
+position: relative;
+color:white;
+font-weight:300;
+}
+li a::before{
+position:absolute;
+content:' ';
+width:0;
+left:0;
+height:5px;
+top:25px;
+border-radius:1rem;
+transition:0.3s ease-in-out;
+background:linear-gradient(to right, rgb(0,157,255), rgb(255,0,255));
+}
+li:hover a::before{
+width:100%;
+}
+.visit-btn{
+padding:0.8rem 1.5rem;
+ border-radius:3rem;
+border:none;
+font-weight:500;
+font-size:1rem;
+color:white;
+cursor:pointer;
+text-wrap:nowrap;
+transition:0.3s ease-in-out;
+background:linear-gradient(to right,rgb(0,157,255),rgb(255,0,255));
+}
+.visit-btn:hover{
+background:linear-gradient(to right,rgb(255,0,255),rgb(0,157,255));
+transform:scale(1.03);
+}
+#menu-icon{
+font-size:2rem;
+display:none;
+}
+section{
+min-height:100vh;
+padding: 8rem 12%;
+width:100%;
+position:relative;
+
+}
+.about{
+display:flex;
+align-items:center;
+justify-content:center;
+}
+.about .about-container{
+display:flex;
+align-items:center;
+justify-content:center;
+gap:10rem;
+}
+.about img{
+height:70vh;
+width:30vw;
+border-radius:50%;
+
+}
+.info-box{
+display:flex;
+flex-direction:column;
+text-align:center;
+align-items:center;
+justify-content:center;
+gap:1.5rem;
+
+}
+.info-box h3{
+font-size:1.8rem;
+font-weight:500;
+opacity:0.8;
+}
+.info-box h1{
+font-size:4rem;
+font-weight:600;
+}
+.info-box span{
+background:linear-gradient(to right, rgb(255,0,255), rgb(0,157,255));
+background-clip: text;
+color:transparent;
+font-size:2rem;
+}
+.btn-group{
+display:flex;
+gap:1rem;
+}
+.btn{
+border-radius:3rem;
+padding:0.5rem 1.5rem;
+border:2px solid black;
+cursor:pointer;
+font-weight:500;
+text-wrap:nowrap;
+transition:0.2s ease-in-out;
+}
+.btn:hover{
+background-color:black;
+color:white;
+}
+.socials{
+display:flex;
+gap:2rem;
+}
+.socials i{
+font-size:2.5rem;
+cursor:pointer;
+transition:0.2s ease-in-out;
+}
+.socials i:hover{
+transform:scale(1.1);
+}
+.section-title{
+text-align:center;
+font-size:4rem;
+font-weight:600;
+margin-bottom:3rem;
+}
+.experience-info{
+display:flex;
+align-items:center;
+justify-content:center;
+gap:5rem;
+}
+.experience img{
+width:24vw;
+border-radius:3rem;
+}
+.grid{
+display:grid;
+grid-template-columns:repeat(2,1fr);
+gap:2rem;
+}
+.grid-card{
+border:2px solid black;
+border-radius:3rem;
+padding:3rem;
+display:flex;
+flex-direction:column;
+align-items:baseline;
+justify-content:left;
+cursor:pointer;
+transition:0.2s ease-in-out;
+}
+.grid-card:hover{
+transform:scale(1.02);
+background-color:black;
+color:white;
+}
+.grid-card i{
+font-size:1.5rem;
+margin-bottom:1rem;
+}
+.grid-card span{
+font-size:1.5rem;
+font-weight:500;
+background:linear-gradient(to right, #009dff,#ff00ff);
+background-clip:text;
+color:transparent;
+}
+::-webkit-scrollbar{
+width:20px;
+}
+::-webkit-scrollbar-track{
+background-color:rgb(219,219,219);
+}
+::-webkit-scrollbar-thumb{
+background:linear-gradient(to bottom,#009ff,#ff00ff);
+}
+.projects-grid{
+display:grid;
+grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+gap:2rem;
+}
+.project-card{
+padding:3rem 2rem;
+display:flex;
+flex-direction:column;
+align-items:center;
+justify-content:center;
+gap:1.5rem;
+border:2px solid black;
+border-radius:3rem;
+cursor:pointer;
+transition:0.3s ease-in-out;
+}
+.project-card:hover{
+background-color:black;
+color:white;
+transform:translateY(-10px)scale(1.02);
+}
+.project-card img{
+width:20vw;
+border-radius:1rem;
+}
+.project-card:hover .btn{
+display: inline-block;
+border:2px solid white;
+color:white;
+}
+.project-card:hover .btn:hover{
+border:2px solid white;
+background-color:white;
+color:black;
+}
+.project-card h3{
+font-size:2rem;
+font-weight:500;
+background:linear-gradient(to right, #009dff,#ff00ff);
+background-clip:text;
+color:transparent;
+
+}
+.input-box{
+display:flex;
+flex-direction:column;
+align-items:center;
+justify-content:center;
+text-align:center;
+gap: 2rem;
+margin-top:5rem;
+}
+.input-box input{
+border-radius:3rem;
+border:2px solid black;
+padding:2rem 8rem;
+font-size:3rem;
+}
+.input-box input::placeholder{
+font-size:3rem;
+}
+.input{
+position:relative;
+}
+.input i{
+position:absolute;
+font-size:4rem;
+top:50%;
+left:10px;
+transform:translate(50%,-50%);
+}
+footer{
+bottom:0;
+left:0;
+height:10rem;
+width:100%;
+display:flex;
+flex-direction:column;
+gap:1rem;
+align-items:center;
+justify-content:center;
+}
+footer ul{
+display:flex;
+align-items:center;
+gap:3rem;
+}
+footer ul li a{
+color:black;
+font-weight:600;
+}
+.copyright{
+font-size:300;
+margin-top:2rem;
+}
+.content p{
+  width: 700px;
+  line-height: 26px;
+  font-size: 18px;
+  text-align: justify;
+}
+
+.cursor{
+  position: fixed;
+  width: 50px;
+  height: 50px;
+  border: 2px solid #3A41C6;
+  border-radius: 50%;
+  left: 0;
+  top: 0;
+  pointer-events: none;
+  transform: translate(-50%, -50%);
+  transition: .1s;
+}
+
+.cursor2{
+  position: fixed;
+  width: 8px;
+  height: 8px;
+  background-color: #800080;
+  border-radius: 50%;
+  left: 0;
+  top: 0;
+  pointer-events: none;
+  transform: translate(-50%, -50%);
+  transition: .15s;
+}
+
+.content:hover ~ .cursor{
+  transform: translate(-50%, -50%) scale(1.5);
+  background-color: #c6c6c6;
+  opacity: .5;
+}
+
+.content:hover ~ .cursor2{
+  opacity: 0;
+}
+@media(max-width:1280px){
+header{
+padding:1rem 2rem;
+gap:2rem;
+}
+.about .about-container{
+gap:3rem;
+}
+.experience-info{
+flex-direction:column;
+}
+.input-box input{
+padding:2rem 5rem;
+font-size:2.5rem;
+
+}
+.input input::placeholder{
+font-size:2.5rem;
+}
+.input-box i{
+font-size:2.5rem;
+}
+
+}
+@media(max-width:768px){
+header{
+gap:1rem;
+padding:1rem 1rem;
+}
+header .logo{
+font-size:1rem;
+}
+header .visit-btn{
+display:none;
+}
+.about-container{
+flex-direction:column;
+}
+.input-box input{
+padding:1rem 2rem;
+font-size:1.8rem;
+}
+.input-box input::placeholder{
+font-size:1.5rem;
+}
+.input-box i{
+display:none;
+}
+.grid{
+grid-template-columns: repeat(1,1fr);
+}
+.experience-info img{
+width:70vw;
+}
+}
+@media(max-width:600px){
+header #menu-icon{
+display:block;
+}
+.nav-links{
+position:absolute;
+top:100%;
+margin-top:1rem;
+width:100%;
+padding:1rem;
+color:white;
+display:flex;
+flex-direction:column;
+text-align:center;
+background:rgba(0,0,0,0.8);
+border-radius:3rem;
+display:none;
+}
+.nav-links li{
+margin-top:1.5rem;
+padding:1rem;
+}
+.nav-links.active{
+display:block;
+}
+header{
+padding:1rem 5rem;
+gap:8rem;
+}
+header .logo{
+font-size:1.5rem;
+}
+.about-container img{
+width:80vw;
+}
+.input-box input{
+padding:0.5rem 3rem;
+width:80%;
+font-size:1.5rem;
+}
+.input-box input:placeholder{
+font-size:1.5rem;
+}
+footer ul{
+gap:1rem;
+}
+
+}
+</style>
+<script>
+    document.addEventListener('DOMContentLoaded', () => {
+        const menuIcon = document.querySelector('#menu-icon');
+        const navLinks = document.querySelector('.nav-links');
+        menuIcon.onclick = () => {
+            navLinks.classList.toggle('active');
+        }
+    });
+
+  function sendEmail() {
+    const userEmail = document.getElementById('userEmail').value;
+    if (userEmail) {
+      window.location.href = `mailto:ahabanwer982@gmail.com?subject=New%20Contact%20Form%20Submission&body=User%20Email:%20${encodeURIComponent(userEmail)}`;
+    } else {
+      alert('Please enter a valid email address.');
+    }
+  }
+document.addEventListener('DOMContentLoaded', () => {
+    const menuIcon = document.querySelector('#menu-icon');
+    const navLinks = document.querySelector('.nav-links');
+    menuIcon.onclick = () => {
+        navLinks.classList.toggle('active');
+    };
+
+    // Custom cursor functionality
+    var cursor = document.querySelector(".cursor");
+    var cursor2 = document.querySelector(".cursor2");
+    
+    document.addEventListener("mousemove", function(e) {
+        cursor.style.cssText = cursor2.style.cssText = "left: " + e.clientX + "px; top: " + e.clientY + "px;";
+    });
+});
+
+</script>
+</head>
+<body>
+
+<header class="header">
+<a href="#" class="logo"><span>Ahab Anwer</span></a>
+<ul class="nav-links">
+<li>
+<a href="#about">About</a>
+</li>
+<li>
+<a href="#experience">Experience</a>
+</li>
+<li>
+<a href="#projects">Projects</a>
+</li>
+<li>
+<a href="#contact">Contact</a>
+</li>
+</ul>
+<i class="fa-solid fa-bars" id="menu-icon"></i>
+<button class="visit-btn" onclick="window.open('https://github.com/AhabAnwer', '_blank')">Visit Github</button>
+
+</header>
+<section id="about" class="about">
+<div class="about-container">
+<img src="ahab2.png" alt="">
+<div class="info-box">
+<div class="text">
+<h3>Hi, I'm</h3>
+<h1>Ahab Anwer</h1>
+<span>Software Devloper</span>
+</div>
+<div class="btn-group">
+<a href="CV.pdf" download="CV.pdf"><div class="btn"><i class="fa fa-download"></i> Download CV</div></a>
+<div class="btn">Contact</div>
+</div>
+<div class="socials">
+<a href="https://github.com/AhabAnwer" target="_blank">
+  <i class="fa-brands fa-github"></i>
+</a>
+
+<a href="https://www.linkedin.com/in/ahab-anwer/" target="_blank">
+  <i class="fa-brands fa-linkedin"></i>
+</a>
+</div>
+</div>
+</div>
+</section>
+<section id="experience" class="experience">
+
+<h2 class="section-title">Experience</h2>
+<div class="experience-info">
+<div class="grid">
+<div class="grid-card">
+<i class="fa-solid fa-code"></i>
+<span>Frontend Development</span>
+<h3>2 Years</h3>
+<p><b> Infosys-certified</b> front-end developer, specializing in responsive, user-focused web applications.</p>
+</div>
+<div class="grid-card">
+<i class="fa-solid fa-database"></i>
+<span>Data Analyst</span>
+<h3>1 Years</h3>
+<p><b>IBM-certified</b>, specializing in data analysis, cleaning, visualization, and trend interpretation. </p>
+</div>
+<div class="grid-card">
+<i class="fa-solid fa-laptop"></i>
+<span>Website Devloper</span>
+<h3>2 Years</h3>
+<p>Co-Founder at <b>Randomyth</b>, driving web development and platform growth.</p>
+</div>
+<div class="grid-card">
+<i class="fa-solid fa-hexagon-nodes-bolt"></i>
+<span>Generative Ai Devloper</span>
+<h3>1 Years</h3>
+<p><b>Microsoft-certified</b> Generative AI developer, specializing in innovative solutions for creative tasks.</p>
+</div>
+<div class="grid-card">
+<i class="fa-solid fa-laptop-code"></i>
+<span>Cyber Security</span>
+<h3>1 Years</h3>
+<p><b>Microsoft-certified</b>, I specialize in cybersecurity, focusing on vulnerabilities, security protocols, and data protection.</p>
+</div>
+<div class="grid-card">
+<i class="fa-brands fa-python"></i>
+<span>Python</span>
+<h3>3 Years</h3>
+<p>Certified by <b>IBM,</b> specialize in Python for data analysis, automation, and developing efficient solutions. </p>
+</div>
+
+</div>
+<img src="ahab2.png" alt="">
+</div>
+</section>
+<section id="projects"  class="projects">
+<h2 class="section-title">Recent Projects</h2>
+<div class="projects-grid">
+<div class="project-card">
+<img src="random.png" alt="">
+<h3>Randomyth</h3>
+<p><b>Randomyth </b>is a platform dedicated to uncovering and sharing fascinating myths, stories, and insightful articles from around the world. </p>
+<div class="btn-group">
+<a href="https://randomyth.in/" class="btn" target="_blank">Visit</a></div>
+</div>
+<div class="project-card">
+<img src="Agri.png" alt="">
+<h3><i class="fa fa-seedling"></i>AgriBridge.</h3>
+<p><b>Agribride</b> is an agricultural platform connecting farmers to markets, providing quality seeds, modern equipment, and financial support to empower efficient and profitable farming. </p>
+<div class="btn-group">
+<a href="https://github.com/AhabAnwer" class="btn" target="_blank">Github Repo</a></div>
+</div>
+<div class="project-card">
+<img src="Morden.png" alt="">
+<h3>Morden Realtors</h3>
+<p><b>Modern Realtor</b> to simplify real estate with tech-driven solutions. Our goal is to make buying, selling, and renting efficient, transparent, and hassle-free for everyone. </p>
+<div class="btn-group">
+<a href="https://github.com/AhabAnwer" class="btn" target="_blank">Github Repo</a></div>
+</div>
+</div>
+
+</div>
+</section>
+<section class="contact" id="contact">
+  <div class="input-box">
+    <h2 class="section-title">Contact Me</h2>
+    <div class="input">
+      <input type="email" id="userEmail" placeholder="example@gmail.com" required>
+      <i class="fa-solid fa-envelope"></i>
+    </div>
+    <a href="#" id="emailLink" class="btn" onclick="sendEmail()">Submit</a>
+  </div>
+</section>
+
+<footer>
+<ul>
+<li>
+<a href="#about">About</a>
+</li>
+<li>
+<a href="#experience">Experience</a>
+</li>
+<li>
+<a href="#projects">Projects</a>
+</li>
+<li>
+<a href="contact">Contact</a>
+</li>
+</ul>
+<p class="copyright">&copy; All Rights Reserved | Ahab Anwer</p>
+</footer>
+<div class="cursor"></div>
+  <div class="cursor2"></div>
+
+</body>
+</html>
