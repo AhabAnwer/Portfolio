@@ -19,6 +19,9 @@ text-decoration:none;
 scroll-behavior:smooth;
 list-style:none;
 }
+body {
+  cursor: none; /* Hides the pointer for the entire webpage */
+}
 header{
 position:fixed;
 top:1rem;
@@ -389,6 +392,21 @@ header{
 gap:1rem;
 padding:1rem 1rem;
 }
+.about-container img{
+height:65vh;
+width:70vw;
+}
+.project-card img{
+height:25vh;
+  width:55vw;
+border-radius:1rem;
+}
+.experience img{
+height:75vh;
+width:90vw;
+border-radius:3rem;
+}
+
 header .logo{
 font-size:1rem;
 }
@@ -448,8 +466,20 @@ header .logo{
 font-size:1.5rem;
 }
 .about-container img{
-width:80vw;
+height:60vh;
+width:70vw;
 }
+.project-card img{
+height:20vh;
+  width:55vw;
+border-radius:1rem;
+}
+.experience img{
+height:67vh;
+width:75vw;
+border-radius:3rem;
+}
+
 .input-box input{
 padding:0.5rem 3rem;
 width:80%;
@@ -461,6 +491,79 @@ font-size:1.5rem;
 footer ul{
 gap:1rem;
 }
+@media (max-width: 400px) {
+  header #menu-icon {
+    display: block;
+  }
+  body {
+  cursor: none; 
+}
+
+  
+  .nav-links {
+    position: absolute;
+    top: 100%;
+    margin-top: 0.5rem;
+    width: 100%;
+    padding: 0.5rem;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    background: rgba(0, 0, 0, 0.9);
+    border-radius: 2rem;
+    display: none;
+  }
+  
+  .nav-links li {
+    margin-top: 1rem;
+    padding: 0.8rem;
+  }
+  
+  .nav-links.active {
+    display: block;
+  }
+  
+  header {
+    padding: 0.5rem 2rem;
+    gap: 5rem;
+  }
+  
+  header .logo {
+    font-size: 1.2rem;
+  }
+  
+  .about-container img {
+    height: 40vh;
+    width: 80vw;
+  }
+  .project-card img{
+height:15vh;
+  width:55vw;
+border-radius:1rem;
+}
+.experience img{
+height:47vh;
+width:75vw;
+border-radius:3rem;
+}
+
+
+  .input-box input {
+    padding: 0.4rem 2rem;
+    width: 90%;
+    font-size: 1.2rem;
+  }
+  
+  .input-box input::placeholder {
+    font-size: 1.2rem;
+  }
+  
+  footer ul {
+    gap: 0.5rem;
+  }
+}
+
 
 }
 </style>
@@ -532,7 +635,7 @@ document.addEventListener('DOMContentLoaded', () => {
 </div>
 <div class="btn-group">
 <a href="CV.pdf" download="CV.pdf"><div class="btn"><i class="fa fa-download"></i> Download CV</div></a>
-<div class="btn">Contact</div>
+<a href="contact.html"><div class="btn"><i class="fa-solid fa-phone"></i> Contact</div></a>
 </div>
 <div class="socials">
 <a href="https://github.com/AhabAnwer" target="_blank">
@@ -603,14 +706,14 @@ document.addEventListener('DOMContentLoaded', () => {
 <a href="https://randomyth.in/" class="btn" target="_blank">Visit</a></div>
 </div>
 <div class="project-card">
-<img src="agri.png" alt="">
+<img src="Agri.png" alt="">
 <h3><i class="fa fa-seedling"></i>AgriBridge.</h3>
 <p><b>Agribride</b> is an agricultural platform connecting farmers to markets, providing quality seeds, modern equipment, and financial support to empower efficient and profitable farming. </p>
 <div class="btn-group">
 <a href="https://github.com/AhabAnwer" class="btn" target="_blank">Github Repo</a></div>
 </div>
 <div class="project-card">
-<img src="morden.png" alt="">
+<img src="Morden.png" alt="">
 <h3>Morden Realtors</h3>
 <p><b>Modern Realtor</b> to simplify real estate with tech-driven solutions. Our goal is to make buying, selling, and renting efficient, transparent, and hassle-free for everyone. </p>
 <div class="btn-group">
@@ -643,7 +746,7 @@ document.addEventListener('DOMContentLoaded', () => {
 <a href="#projects">Projects</a>
 </li>
 <li>
-<a href="contact">Contact</a>
+<a href="#contact">Contact</a>
 </li>
 </ul>
 <p class="copyright">&copy; All Rights Reserved | Ahab Anwer</p>
