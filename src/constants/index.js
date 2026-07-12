@@ -1,4 +1,4 @@
-import { shopify, starbucks, tesla } from "../assets/images";
+import { shopify, starbucks, tesla, accenture, microsoft, randomyth } from "../assets/images";
 import {
     car,
     contact,
@@ -129,8 +129,8 @@ export const experiences = [
     {
         title: "ABAP Cloud Developer Intern",
         company_name: "Accenture",
-        icon: starbucks,
-        iconBg: "#accbe1",
+        icon: accenture,
+        iconBg: "#f6f0ff",
         date: "May 2026 - Jul 2026",
         points: [
             "Developed 3+ enterprise SAP application modules using SAP ABAP Cloud, RAP, CDS Views, SAP BTP, and SAP Fiori Elements.",
@@ -141,8 +141,8 @@ export const experiences = [
     {
         title: "AI Developer Intern",
         company_name: "Edunet – Microsoft & SAP CSR Initiative",
-        icon: tesla,
-        iconBg: "#fbc3bc",
+        icon: microsoft,
+        iconBg: "#f4f4f4",
         date: "Jan 2025 - Apr 2025",
         points: [
             "Built an AI-powered healthcare assistant using NLP and Deep Learning, cutting consultation time by 60% and misdiagnosis rates by 30%.",
@@ -152,8 +152,8 @@ export const experiences = [
     {
         title: "Co-Founder & Frontend Developer",
         company_name: "Randomyth",
-        icon: shopify,
-        iconBg: "#b7e4c7",
+        icon: randomyth,
+        iconBg: "#fff",
         date: "Oct 2023 - Present",
         points: [
             "Led React.js front-end development, redesigning UI/UX that drove 150% user engagement growth and an 85% increase in returning visitors.",
