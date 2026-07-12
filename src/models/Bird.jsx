@@ -54,3 +54,6 @@ export function Bird() {
     </mesh>
   );
 }
+
+useGLTF.preload(birdScene);
+

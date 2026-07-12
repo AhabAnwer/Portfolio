@@ -29,3 +29,6 @@ export function Plane({ isRotating, ...props }) {
     </mesh>
   );
 }
+
+useGLTF.preload(planeScene);
+

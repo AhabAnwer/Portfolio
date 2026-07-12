@@ -55,7 +55,8 @@ const Contact = () => {
               email: "",
               message: "",
             });
-          }, [3000]);
+          }, 3000);
+
         },
         (error) => {
           setLoading(false);

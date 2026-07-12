@@ -27,86 +27,103 @@ import {
 
 export const skills = [
     {
-        imageUrl: css,
+        imageUrl: "https://cdn.simpleicons.org/cplusplus/00599C",
         name: "C/C++",
         type: "Programming",
+        theme: "btn-back-cplusplus",
     },
     {
-        imageUrl: html,
+        imageUrl: "https://cdn.simpleicons.org/java/007396",
         name: "Java",
         type: "Programming",
+        theme: "btn-back-java",
     },
     {
-        imageUrl: javascript,
+        imageUrl: "https://cdn.simpleicons.org/python/3776AB",
         name: "Python",
         type: "Programming",
+        theme: "btn-back-python",
     },
     {
         imageUrl: react,
         name: "React.js",
         type: "Frontend",
+        theme: "btn-back-react",
     },
     {
-        imageUrl: nodejs,
+        imageUrl: "https://cdn.simpleicons.org/flask/000000",
         name: "Flask",
         type: "Backend",
+        theme: "btn-back-flask",
     },
     {
-        imageUrl: mongodb,
+        imageUrl: "https://cdn.simpleicons.org/mysql/4479A1",
         name: "SQL & Databases",
         type: "Data",
+        theme: "btn-back-sql",
     },
     {
         imageUrl: git,
         name: "Git",
         type: "Version Control",
+        theme: "btn-back-git",
     },
     {
         imageUrl: github,
         name: "GitHub",
         type: "Version Control",
+        theme: "btn-back-github",
     },
     {
         imageUrl: tailwindcss,
         name: "Tailwind CSS",
         type: "Frontend",
+        theme: "btn-back-tailwind",
     },
     {
         imageUrl: typescript,
         name: "TypeScript",
         type: "Frontend",
+        theme: "btn-back-typescript",
     },
     {
-        imageUrl: nextjs,
+        imageUrl: "https://cdn.simpleicons.org/amazonwebservices/FF9900",
         name: "AWS",
         type: "Cloud",
+        theme: "btn-back-aws",
     },
     {
-        imageUrl: motion,
+        imageUrl: "https://cdn.simpleicons.org/kubernetes/326CE5",
         name: "Kubernetes",
         type: "DevOps",
+        theme: "btn-back-kubernetes",
     },
     {
-        imageUrl: express,
+        imageUrl: "https://cdn.simpleicons.org/sap/008FD3",
         name: "SAP ABAP",
         type: "Enterprise Software",
+        theme: "btn-back-sap",
     },
     {
-        imageUrl: redux,
+        imageUrl: "https://cdn.simpleicons.org/sap/008FD3",
         name: "RAP / CDS",
         type: "SAP",
+        theme: "btn-back-sap-rap",
     },
     {
-        imageUrl: sass,
+        imageUrl: "https://cdn.simpleicons.org/sap/008FD3",
         name: "SAP BTP",
         type: "Cloud",
+        theme: "btn-back-sap-btp",
     },
     {
-        imageUrl: mui,
+        imageUrl: "https://cdn.simpleicons.org/sap/008FD3",
         name: "SAP Fiori",
         type: "UI",
+        theme: "btn-back-sap-fiori",
     }
 ];
+
 
 export const experiences = [
     {

@@ -26,3 +26,6 @@ export function Sky({ isRotating }) {
     </mesh>
   );
 }
+
+useGLTF.preload(skyScene);
+

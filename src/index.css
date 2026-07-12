@@ -24,6 +24,7 @@ body:has(.card[data-color="green"]:hover) {
 @layer utilities {
   .max-container {
     @apply max-w-5xl mx-auto sm:p-16 pb-12 !pt-[126px] px-8 min-h-[calc(100vh-80px)];
+    animation: fadeIn 0.6s cubic-bezier(0.16, 1, 0.3, 1) forwards;
   }
 
   .head-text {
@@ -141,6 +142,69 @@ body:has(.card[data-color="green"]:hover) {
 .block-container .btn-back-black {
   background: linear-gradient(135deg, #0a1647 -20%, #e4e7e4 120%);
 }
+
+/* Custom Skill Gradients */
+.block-container .btn-back-cplusplus {
+  background: linear-gradient(135deg, #00599c -20%, #0081cb 120%);
+}
+.block-container .btn-back-java {
+  background: linear-gradient(135deg, #5382a1 -20%, #f89820 120%);
+}
+.block-container .btn-back-python {
+  background: linear-gradient(135deg, #3776ab -20%, #ffd43b 120%);
+}
+.block-container .btn-back-react {
+  background: linear-gradient(135deg, #00d8ff -20%, #0070a0 120%);
+}
+.block-container .btn-back-flask {
+  background: linear-gradient(135deg, #000000 -20%, #4f4f4f 120%);
+}
+.block-container .btn-back-sql {
+  background: linear-gradient(135deg, #00758f -20%, #f29111 120%);
+}
+.block-container .btn-back-git {
+  background: linear-gradient(135deg, #f05032 -20%, #f1725a 120%);
+}
+.block-container .btn-back-github {
+  background: linear-gradient(135deg, #181717 -20%, #404040 120%);
+}
+.block-container .btn-back-tailwind {
+  background: linear-gradient(135deg, #06b6d4 -20%, #38bdf8 120%);
+}
+.block-container .btn-back-typescript {
+  background: linear-gradient(135deg, #3178c6 -20%, #5c9df5 120%);
+}
+.block-container .btn-back-aws {
+  background: linear-gradient(135deg, #ff9900 -20%, #ffc060 120%);
+}
+.block-container .btn-back-kubernetes {
+  background: linear-gradient(135deg, #326ce5 -20%, #6896f5 120%);
+}
+.block-container .btn-back-sap {
+  background: linear-gradient(135deg, #008fd3 -20%, #00b0ff 120%);
+}
+.block-container .btn-back-sap-rap {
+  background: linear-gradient(135deg, #004d80 -20%, #008fd3 120%);
+}
+.block-container .btn-back-sap-btp {
+  background: linear-gradient(135deg, #1d2d50 -20%, #133b5c 120%);
+}
+.block-container .btn-back-sap-fiori {
+  background: linear-gradient(135deg, #e81cff -20%, #008fd3 120%);
+}
+
+/* Page Transition Keyframes */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
 
 .block-container .btn-front {
   position: absolute;
