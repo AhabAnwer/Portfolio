@@ -16,7 +16,7 @@ import { useFrame, useThree } from "@react-three/fiber";
 
 import islandScene from "../assets/3d/island.glb";
 import { Drogon } from "./Drogon";
-import { CasualHuman } from "./CasualHuman";
+import { GalacticBoy } from "./GalacticBoy";
 
 export function Island({
   isRotating,
@@ -251,11 +251,10 @@ export function Island({
         scale={[0.0008, 0.0008, 0.0008]}
       />
       
-      {/* Casual human standing at the front door gate */}
-      <CasualHuman
+      {/* Galactic Boy iframe embed standing near the front door gate */}
+      <GalacticBoy
         position={[-5.2, 3.72, 0.0]}
         rotation={[0, -Math.PI / 2, 0]}
-        scale={[0.9, 0.9, 0.9]}
       />
     </a.group>
   );
