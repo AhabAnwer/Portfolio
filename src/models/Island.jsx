@@ -15,6 +15,8 @@ import { useGLTF } from "@react-three/drei";
 import { useFrame, useThree } from "@react-three/fiber";
 
 import islandScene from "../assets/3d/island.glb";
+import { Drogon } from "./Drogon";
+import { CasualHuman } from "./CasualHuman";
 
 export function Island({
   isRotating,
@@ -240,6 +242,20 @@ export function Island({
       <mesh
         geometry={nodes.pCube11_rocks1_0.geometry}
         material={materials.PaletteMaterial001}
+      />
+      
+      {/* Drogon sitting on the garden floating island */}
+      <Drogon
+        position={[14, -2.0, -17]}
+        rotation={[0, 2.5, 0]}
+        scale={[0.0008, 0.0008, 0.0008]}
+      />
+      
+      {/* Casual human standing at the front door gate */}
+      <CasualHuman
+        position={[-5.3, -1.2, 0]}
+        rotation={[0, Math.PI / 2, 0]}
+        scale={[0.00009, 0.00009, 0.00009]}
       />
     </a.group>
   );
