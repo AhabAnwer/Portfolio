@@ -5,5 +5,4 @@ export { Island } from "./Island";
 export { Fox } from "./Fox";
 export { Drogon } from "./Drogon";
 export { CasualHuman } from "./CasualHuman";
-export { GalacticBoy } from "./GalacticBoy";
 export { BoySherryArian } from "./BoySherryArian";
