@@ -317,3 +317,63 @@ body:has(.card[data-color="green"]:hover) {
     filter: blur(12px) brightness(0.5);
   }
 }
+
+/* Comic Speech Bubble styles */
+.comic-bubble {
+  position: relative;
+  background: #ffffff;
+  border: 3px solid #000000;
+  border-radius: 12px;
+  padding: 10px 15px;
+  color: #000000;
+  font-family: 'Comic Sans MS', 'Chalkboard SE', 'Courier New', sans-serif;
+  font-weight: bold;
+  font-size: 14px;
+  text-align: center;
+  box-shadow: 4px 4px 0px #000000;
+  max-width: 250px;
+  min-width: 180px;
+  white-space: normal;
+  pointer-events: none;
+  animation: popIn 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275) forwards;
+}
+
+/* The bubble pointer triangle pointing down */
+.comic-bubble::after {
+  content: '';
+  position: absolute;
+  bottom: -12px;
+  left: 50%;
+  transform: translateX(-50%);
+  border-width: 12px 10px 0;
+  border-style: solid;
+  border-color: #ffffff transparent;
+  display: block;
+  width: 0;
+}
+
+.comic-bubble::before {
+  content: '';
+  position: absolute;
+  bottom: -16px;
+  left: 50%;
+  transform: translateX(-50%);
+  border-width: 13px 11px 0;
+  border-style: solid;
+  border-color: #000000 transparent;
+  display: block;
+  width: 0;
+  z-index: -1;
+}
+
+@keyframes popIn {
+  from {
+    transform: scale(0) translateY(20px);
+    opacity: 0;
+  }
+  to {
+    transform: scale(1) translateY(0);
+    opacity: 1;
+  }
+}
+

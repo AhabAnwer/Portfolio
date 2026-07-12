@@ -253,9 +253,9 @@ export function Island({
       
       {/* Casual human standing at the front door gate */}
       <CasualHuman
-        position={[-5.2, 2.86, 0.0]}
+        position={[-5.2, 3.72, 0.0]}
         rotation={[0, -Math.PI / 2, 0]}
-        scale={[0.00009, 0.00009, 0.00009]}
+        scale={[0.9, 0.9, 0.9]}
       />
     </a.group>
   );

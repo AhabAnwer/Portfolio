@@ -22,9 +22,8 @@ export function Plane({ isRotating, ...props }) {
   }, [actions, isRotating]);
 
   return (
-    <mesh {...props} ref={ref}>
-      // use the primitive element when you want to directly embed a complex 3D
-      model or scene
+    <mesh {...props} ref={ref} name="biplane">
+      {/* use the primitive element when you want to directly embed a complex 3D model or scene */}
       <primitive object={scene} />
     </mesh>
   );
