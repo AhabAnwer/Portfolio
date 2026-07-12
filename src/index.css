@@ -264,12 +264,19 @@ body:has(.card[data-color="green"]:hover) {
 }
 
 .splash-image {
-  width: 260px;
-  height: 260px;
+  width: 300px;
+  height: 300px;
   object-fit: contain;
   border-radius: 50%;
   box-shadow: 0 30px 60px rgba(0, 0, 0, 0.6);
   animation: splashAnim 2s cubic-bezier(0.25, 1, 0.5, 1) forwards;
+}
+
+@media (min-width: 768px) {
+  .splash-image {
+    width: 420px;
+    height: 420px;
+  }
 }
 
 @keyframes fadeOutContainer {
