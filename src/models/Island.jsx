@@ -246,15 +246,15 @@ export function Island({
       
       {/* Drogon sitting on the garden floating island */}
       <Drogon
-        position={[14, -2.0, -17]}
-        rotation={[0, 2.5, 0]}
+        position={[17.0, 3.0, 28.7]}
+        rotation={[0, 2.2, 0]}
         scale={[0.0008, 0.0008, 0.0008]}
       />
       
       {/* Casual human standing at the front door gate */}
       <CasualHuman
-        position={[-5.3, -1.2, 0]}
-        rotation={[0, Math.PI / 2, 0]}
+        position={[-5.2, 2.86, 0.0]}
+        rotation={[0, -Math.PI / 2, 0]}
         scale={[0.00009, 0.00009, 0.00009]}
       />
     </a.group>
