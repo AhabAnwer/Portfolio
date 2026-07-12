@@ -152,6 +152,7 @@ export const experiences = [
     {
         title: "Co-Founder & Frontend Developer",
         company_name: "Randomyth",
+        company_link: "https://randomyth.in",
         icon: randomyth,
         iconBg: "#fff",
         date: "Oct 2023 - Present",

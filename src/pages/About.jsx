@@ -67,7 +67,7 @@ const About = () => {
                     <img
                       src={experience.icon}
                       alt={experience.company_name}
-                      className='w-[60%] h-[60%] object-contain'
+                      className={experience.company_name === "Randomyth" ? 'w-[85%] h-[85%] object-contain' : 'w-[60%] h-[60%] object-contain'}
                     />
                   </div>
                 }
@@ -82,12 +82,24 @@ const About = () => {
                   <h3 className='text-black text-xl font-poppins font-semibold'>
                     {experience.title}
                   </h3>
-                  <p
-                    className='text-black-500 font-medium text-base'
-                    style={{ margin: 0 }}
-                  >
-                    {experience.company_name}
-                  </p>
+                  {experience.company_link ? (
+                    <a
+                      href={experience.company_link}
+                      target='_blank'
+                      rel='noopener noreferrer'
+                      className='text-blue-600 hover:underline font-medium text-base font-poppins'
+                      style={{ margin: 0 }}
+                    >
+                      {experience.company_name}
+                    </a>
+                  ) : (
+                    <p
+                      className='text-black-500 font-medium text-base'
+                      style={{ margin: 0 }}
+                    >
+                      {experience.company_name}
+                    </p>
+                  )}
                 </div>
 
                 <ul className='my-5 list-disc ml-5 space-y-2'>
