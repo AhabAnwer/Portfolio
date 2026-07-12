@@ -14,6 +14,18 @@ const Home = () => {
   const [currentStage, setCurrentStage] = useState(1);
   const [isRotating, setIsRotating] = useState(false);
   const [isPlayingMusic, setIsPlayingMusic] = useState(false);
+  const [windowWidth, setWindowWidth] = useState(window.innerWidth);
+
+  useEffect(() => {
+    const handleResize = () => {
+      setWindowWidth(window.innerWidth);
+    };
+
+    window.addEventListener("resize", handleResize);
+    return () => {
+      window.removeEventListener("resize", handleResize);
+    };
+  }, []);
 
   useEffect(() => {
     if (isPlayingMusic) {
@@ -28,8 +40,10 @@ const Home = () => {
   const adjustBiplaneForScreenSize = () => {
     let screenScale, screenPosition;
 
-    // If screen width is less than 768px, adjust the scale and position
-    if (window.innerWidth < 768) {
+    if (windowWidth < 480) {
+      screenScale = [1.2, 1.2, 1.2];
+      screenPosition = [0, -1.5, 0];
+    } else if (windowWidth < 768) {
       screenScale = [1.5, 1.5, 1.5];
       screenPosition = [0, -1.5, 0];
     } else {
@@ -43,8 +57,11 @@ const Home = () => {
   const adjustIslandForScreenSize = () => {
     let screenScale, screenPosition;
 
-    if (window.innerWidth < 768) {
-      screenScale = [0.9, 0.9, 0.9];
+    if (windowWidth < 480) {
+      screenScale = [0.55, 0.55, 0.55];
+      screenPosition = [0, -6.5, -43.4];
+    } else if (windowWidth < 768) {
+      screenScale = [0.85, 0.85, 0.85];
       screenPosition = [0, -6.5, -43.4];
     } else {
       screenScale = [1, 1, 1];

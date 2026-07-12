@@ -18,7 +18,7 @@ const Projects = () => {
         These projects reflect my work in AI/ML, full-stack development, and real-world problem solving. I enjoy building products that combine practical impact with thoughtful user experience.
       </p>
 
-      <div className='flex flex-wrap my-20 gap-16'>
+      <div className='flex flex-wrap my-20 sm:gap-16 gap-10'>
         {projects.map((project) => (
           <div className='lg:w-[400px] w-full' key={project.name}>
             <div className='block-container w-12 h-12'>

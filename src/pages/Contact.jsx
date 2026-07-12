@@ -1,6 +1,6 @@
 import emailjs from "@emailjs/browser";
 import { Canvas } from "@react-three/fiber";
-import { Suspense, useRef, useState } from "react";
+import { Suspense, useEffect, useRef, useState } from "react";
 
 import { Fox } from "../models";
 import useAlert from "../hooks/useAlert";
@@ -12,6 +12,34 @@ const Contact = () => {
   const { alert, showAlert, hideAlert } = useAlert();
   const [loading, setLoading] = useState(false);
   const [currentAnimation, setCurrentAnimation] = useState("idle");
+  const [windowWidth, setWindowWidth] = useState(window.innerWidth);
+
+  useEffect(() => {
+    const handleResize = () => {
+      setWindowWidth(window.innerWidth);
+    };
+
+    window.addEventListener("resize", handleResize);
+    return () => {
+      window.removeEventListener("resize", handleResize);
+    };
+  }, []);
+
+  const adjustFoxForScreenSize = () => {
+    let screenScale, screenPosition;
+
+    if (windowWidth < 768) {
+      screenScale = [0.35, 0.35, 0.35];
+      screenPosition = [0, -0.6, 0];
+    } else {
+      screenScale = [0.5, 0.5, 0.5];
+      screenPosition = [0.5, 0.35, 0];
+    }
+
+    return [screenScale, screenPosition];
+  };
+
+  const [foxScale, foxPosition] = adjustFoxForScreenSize();
 
   const handleChange = ({ target: { name, value } }) => {
     setForm({ ...form, [name]: value });
@@ -160,9 +188,9 @@ const Contact = () => {
           <Suspense fallback={<Loader />}>
             <Fox
               currentAnimation={currentAnimation}
-              position={[0.5, 0.35, 0]}
+              position={foxPosition}
               rotation={[12.629, -0.6, 0]}
-              scale={[0.5, 0.5, 0.5]}
+              scale={foxScale}
             />
           </Suspense>
         </Canvas>
