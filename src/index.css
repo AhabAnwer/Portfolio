@@ -264,8 +264,10 @@ body:has(.card[data-color="green"]:hover) {
 }
 
 .splash-image {
-  width: 300px;
-  height: 300px;
+  width: 380px;
+  height: 380px;
+  max-width: 90vw;
+  max-height: 90vw;
   object-fit: contain;
   border-radius: 50%;
   box-shadow: 0 30px 60px rgba(0, 0, 0, 0.6);
@@ -274,8 +276,10 @@ body:has(.card[data-color="green"]:hover) {
 
 @media (min-width: 768px) {
   .splash-image {
-    width: 420px;
-    height: 420px;
+    width: 580px;
+    height: 580px;
+    max-width: 80vw;
+    max-height: 80vh;
   }
 }
 
