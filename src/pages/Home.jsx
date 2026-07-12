@@ -5,6 +5,7 @@ import sakura from "../assets/sakura.mp3";
 import { HomeInfo, Loader } from "../components";
 import { soundoff, soundon } from "../assets/icons";
 import { Dragon, Island, Plane, Sky } from "../models";
+import dragonLogo from "../assets/images/dragon-logo.jpg";
 
 const Home = () => {
   const audioRef = useRef(new Audio(sakura));
@@ -15,6 +16,14 @@ const Home = () => {
   const [isRotating, setIsRotating] = useState(false);
   const [isPlayingMusic, setIsPlayingMusic] = useState(false);
   const [windowWidth, setWindowWidth] = useState(window.innerWidth);
+  const [showSplash, setShowSplash] = useState(true);
+
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      setShowSplash(false);
+    }, 2000);
+    return () => clearTimeout(timer);
+  }, []);
 
   useEffect(() => {
     const handleResize = () => {
@@ -76,6 +85,15 @@ const Home = () => {
 
   return (
     <section className='w-full h-screen relative'>
+      {showSplash && (
+        <div className='splash-container'>
+          <img
+            src={dragonLogo}
+            alt='dragon logo'
+            className='splash-image'
+          />
+        </div>
+      )}
       <div className='absolute top-28 left-0 right-0 z-10 flex items-center justify-center'>
         {currentStage && <HomeInfo currentStage={currentStage} />}
       </div>
