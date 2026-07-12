@@ -5,7 +5,7 @@ import sakura from "../assets/sakura.mp3";
 import { HomeInfo, Loader } from "../components";
 import { soundoff, soundon } from "../assets/icons";
 import { Dragon, Island, Plane, Sky } from "../models";
-import dragonLogo from "../assets/images/dragon-logo.jpg";
+import dragonLogo from "../assets/images/dragon-logo.png";
 
 const Home = () => {
   const audioRef = useRef(new Audio(sakura));
