@@ -256,11 +256,6 @@ export function Island({
         rotation={[0, -Math.PI / 2, 0]}
         scale={[1, 1, 1]}
       />
-      {/* Debug red box to test coordinates */}
-      <mesh position={[-5.2, 3.86, 0.0]}>
-        <boxGeometry args={[1, 2, 1]} />
-        <meshBasicMaterial color="red" />
-      </mesh>
     </a.group>
   );
 }
