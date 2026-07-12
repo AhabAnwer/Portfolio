@@ -251,7 +251,9 @@ body:has(.card[data-color="green"]:hover) {
   position: fixed;
   inset: 0;
   z-index: 999999;
-  background-color: #0b0c10;
+  background-color: rgba(255, 255, 255, 0.03);
+  backdrop-filter: blur(24px);
+  -webkit-backdrop-filter: blur(24px);
   display: flex;
   justify-content: center;
   align-items: center;
